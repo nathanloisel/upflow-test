@@ -1,0 +1,64 @@
+{
+	"extends": [
+		"eslint:recommended",
+		"react-app",
+		"plugin:@typescript-eslint/recommended",
+		"prettier/@typescript-eslint",
+		"plugin:prettier/recommended"
+	],
+	"plugins": ["react", "@typescript-eslint", "prettier", "json"],
+	"env": {
+		"browser": true,
+		"jasmine": true,
+		"jest": true
+	},
+	"rules": {
+		"max-len": 0,
+		"no-multi-str": 0,
+		"object-curly-spacing": ["error", "always"],
+		"prettier/prettier": [
+			"error",
+			{
+				"semi": true,
+				"bracketSpacing": true,
+				"endOfLine": "lf",
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"tabWidth": 2,
+				"printWidth": 80
+			}
+		],
+		"@typescript-eslint/no-unused-vars": 0,
+		"@typescript-eslint/no-empty-interface": 0,
+		"@typescript-eslint/explicit-module-boundary-types": 0,
+		"@typescript-eslint/ban-ts-comment": 0,
+		"@typescript-eslint/no-var-requires": 0,
+		"@typescript-eslint/ban-types": 0,
+		"@typescript-eslint/explicit-member-accessibility": 0,
+		"@typescript-eslint/camelcase": 0,
+		"@typescript-eslint/interface-name-prefix": 0,
+		"@typescript-eslint/ban-ts-ignore": 0,
+		"@typescript-eslint/no-empty-function": 0,
+		"@typescript-eslint/prefer-interface": 0,
+		"@typescript-eslint/no-explicit-any": 0,
+		"@typescript-eslint/explicit-function-return-type": 0,
+		"@typescript-eslint/no-use-before-define": 0,
+		"import/no-anonymous-default-export": 0,
+		"no-empty": 0,
+		"no-console": 1,
+		"prefer-template": 1,
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@material-ui/*/*/*", "!@material-ui/core/test-utils/*"]
+			}
+		]
+	},
+	"settings": {
+		"react": {
+			"pragma": "React",
+			"version": "detect"
+		}
+	},
+	"parser": "@typescript-eslint/parser"
+}

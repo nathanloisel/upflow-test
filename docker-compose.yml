@@ -1,0 +1,72 @@
+version: '2.4'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: paracomp
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U $$POSTGRES_USER']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - dev
+
+  init-para-api:
+    build:
+      context: ./api
+      args:
+        - NODE_ENV=development
+    command: npm run init:db
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./api:/upflow-test
+      - /upflow-test/node_modules
+    networks:
+      - dev
+
+  api:
+    build:
+      context: ./api
+      args:
+        - NODE_ENV=development
+    command: npm run watch
+    depends_on:
+      - init-para-api
+    volumes:
+      - ./api:/upflow-test
+      - /upflow-test/node_modules
+    ports:
+      - '8080:8080'
+    networks:
+      - dev
+
+  # ui:
+  #   build:
+  #     context: ./ui
+  #     args:
+  #       - NODE_ENV=production
+  #   depends_on:
+  #     - api
+  #   volumes:
+  #     - ./ui:/upflow-test
+  #   # Before you run this file for the first time, make sure 
+  #   # you remove node_modules/ folders in your host machine
+  #   command: node ./build/server.js
+  #   ports:
+  #     - '3000:3000'
+  #     - '3001:3001'
+  #   networks:
+  #     - dev
+
+networks:
+  dev:
+    external: true

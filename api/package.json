@@ -1,0 +1,57 @@
+{
+  "name": "paracomp-api",
+  "version": "1.0.0",
+  "description": "paracomp graphql api",
+  "main": "dist/server",
+  "scripts": {
+    "test": "npx jest",
+    "migration": "npx knex migrate:latest",
+    "migration:rollback": "npx knex migrate:rollback --all",
+    "data:gen": "node ./seeds/data/random-data-gen.js",
+    "seed": "npx knex seed:run",
+    "init:db": "npm run migration && npm run seed",
+    "build": "npx rimraf dist && npx tsc",
+    "start": "npx node dist/server",
+    "watch": "npx nodemon --legacy-watch",
+    "lint": "npx eslint"
+  },
+  "author": "Nathan Loisel",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/config": "0.0.38",
+    "@types/express": "^4.17.12",
+    "@types/graphql": "^14.5.0",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.1",
+    "@types/pg": "^8.6.0",
+    "@types/react-dom": "^17.0.6",
+    "@types/styled-components": "^5.1.9",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "jest": "^27.0.3",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^0.14.0",
+    "apollo-server-express": "^2.25.0",
+    "axios": "^0.21.1",
+    "config": "^3.3.6",
+    "datasource-sql": "^1.4.1",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "knex": "^0.95.6",
+    "pg": "^8.6.0"
+  },
+  "keywords": [
+    "Typescript",
+    "GraphQL",
+    "Node",
+    "Javascript"
+  ]
+}

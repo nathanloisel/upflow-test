@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "jpoissonnier.vscode-styled-components",
+    "wayou.vscode-todo-highlight",
+    "planbcoding.vscode-react-refactor",
+    "dbaeumer.vscode-eslint"
+  ]
+}

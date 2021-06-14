@@ -1,0 +1,151 @@
+{
+  "UseState": {
+		"scope": "typescriptreact",
+    "prefix": "tsusestate",
+    "body": [
+      "const $1 = React.useState($2);",
+    ],
+    "description": "Create use state statement."
+  },
+  "UseEffect": {
+		"scope": "typescriptreact",
+    "prefix": "tsuseeffect",
+    "body": [
+      "React.useEffect(() => {$1}, []);",
+    ],
+    "description": "Create use effect statement."
+  },
+  "UseCallback": {
+		"scope": "typescriptreact",
+    "prefix": "tsusecallback",
+    "body": [
+      "const ${1:onClick} = React.useCallback(() => {}, []);",
+    ],
+    "description": "Create use callback statement."
+  },
+  "UseMemo": {
+		"scope": "typescriptreact",
+    "prefix": "tsusememo",
+    "body": [
+      "const  ${1:value} = React.useMemo(() => {}, []);",
+    ],
+    "description": "Create use memo statement."
+  },
+  "Interface": {
+		"scope": "typescript, typescriptreact",
+    "prefix": "interface",
+    "body": ["interface ${1:Props} {}", ""],
+    "description": "create a interface."
+  },
+	"React Functional Component": {
+    "scope": "typescriptreact",
+		"prefix": "tsrfc",
+		"body": [
+			"import * as React from 'react';",
+			"",
+			"export interface I${1:App}Props {",
+			"}",
+			"",
+			"const ${1:App}: React.FC<I${1:App}Props> = (props) => {",
+			"//    const [${2:state}, set${2:State}] = useState(${3:undefined});",
+			"    return (",
+			"      <div>",
+			"        ${2}",
+			"      </div>",
+			"    );",
+			"};",
+			"",
+			"export default ${1:App};",
+			""
+		],
+		"description": "Create a React Functional Component."
+	},
+	"Component Story": {
+    "scope": "typescriptreact",
+		"prefix": "tsstory",
+		"body": [
+			"import React from 'react';",
+			"import { Story, Meta } from '@storybook/react/types-6-0';",
+			"import { action } from '@storybook/addon-actions';",
+			"import { withDesign } from 'storybook-addon-designs';",
+			"",
+			"import ${2:Component}, { I${2:Component}Props } from '.';",
+			"",
+			"export default {",
+			"  title: '${1:App}/${2:Component}',",
+			"  component: ${2:Component},",
+			"  decorators: [withDesign],",
+			"} as Meta;",
+			"",
+			"const Template: Story<I${2:Component}Props> = (args) => {",
+			"  return <${2:Component} {...args} />;",
+			"};",
+			"",
+			"export const ${2:Component}Ex = Template.bind({});",
+			"",
+			"${2:Component}Ex.args = {",
+			"};",
+			""
+		],
+		"description": "Create a React Functional Component."
+	},
+	"React Functional Component Without import and default export": {
+    "scope": "typescriptreact",
+		"prefix": "tsafunctioncomp",
+		"body": [
+			"export interface I${1:Cmp}Props {}",
+			"",
+			"export const ${1:Cmp}: React.FC<I${1:Cmp}Props> = (props) => {",
+			"  return </div>;",
+			"};",
+			""
+		],
+		"description": "Create a React Functional Component Without import and default export."
+	},
+	"Container": {
+    "scope": "typescriptreact",
+		"prefix": "tsrcont",
+		"body": [
+			"import * as React from 'react';",
+			"",
+			"export interface IProps {",
+			"}",
+			"",
+			"",
+			"const ${1:App}: React.FunctionComponent<IProps> = (props) => {",
+			"//    const dispatch = useDispatch();",
+			"//    const state = useSelector((state) => state);",
+			"",
+			"    return <span />;",
+			"}",
+			"",
+			"export default ${1:App}",
+			""
+		],
+		"description": "Create React container"
+	},
+	"import": {
+    "scope": "typescriptreact, typescript",
+		"prefix": "imt",
+		"body": ["import { $2 } from '$1';"],
+		"description": "Create a import"
+	},
+	"import all": {
+    "scope": "typescriptreact, typescript",
+		"prefix": "imta",
+		"body": ["import * as $1 from '$2';"],
+		"description": "Import everything from module"
+	},
+	"import default": {
+    "scope": "typescriptreact, typescript",
+		"prefix": "imtd",
+		"body": ["import $1 from '$2';"],
+		"description": "Create a default import"
+	},
+	"theme": {
+    "scope": "css",
+		"prefix": "theme",
+		"body": ["${({ theme }) => theme.${1:palette}\\};"],
+		"description": "Create a theme arrow function for styled components"
+	}
+}

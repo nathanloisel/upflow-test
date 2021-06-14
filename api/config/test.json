@@ -1,0 +1,12 @@
+{
+    "server": {
+        "port": 8080
+    },
+    "database": {
+        "database": "paracomp-test",
+        "host": "postgres",
+        "user": "postgres",
+        "password": "postgres",
+        "port": 5432
+    }
+}

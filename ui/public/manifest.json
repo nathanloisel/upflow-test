@@ -1,0 +1,18 @@
+{
+	"short_name": "Moon Trading",
+	"name": "Moon Trading",
+	"icons": [
+		{
+			"src": "/favicon.ico",
+			"sizes": "32v32",
+			"type": "image/ico"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"orientation": "portrait-primary",
+	"background_color": "#FFF",
+	"theme_color": "#FFF",
+	"description": "An advanced market chart platform for traders. A place where traders help each other, discuss and fight each other to progress.",
+	"lang": "en"
+}

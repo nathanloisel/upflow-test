@@ -1,0 +1,47 @@
+{
+  "extends": "@tsconfig/node12/tsconfig.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2019"
+    ],
+    "target": "es2016",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "pretty": true,
+    "strict": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    "baseUrl": "src"
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "razzle.config.js"
+  ],
+  "types": [
+    "typePatches",
+    "node",
+    "webpack-env"
+  ],
+  "include": [
+    "src/**/*",
+    "typings/*"
+  ]
+}

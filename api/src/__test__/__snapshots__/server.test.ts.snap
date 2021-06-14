@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Integration test against apollo server test apollo server return paraglinders 1`] = `
+Object {
+  "data": Object {
+    "paraglinders": Object {
+      "pagination": Object {
+        "currentPage": 1,
+        "pageCount": 1,
+        "total": 3,
+      },
+      "paraglinders": Array [
+        Object {
+          "allon": 4.77,
+          "brand": "Nitracyr",
+          "name": "9cb3da02",
+          "practice": "ecole",
+          "ratio": 11,
+        },
+        Object {
+          "allon": 6.07,
+          "brand": "Avit",
+          "name": "5b96396b",
+          "practice": "hikeNfly",
+          "ratio": 10,
+        },
+        Object {
+          "allon": 5.6,
+          "brand": "Avit",
+          "name": "94be658d",
+          "practice": "ecole",
+          "ratio": 11,
+        },
+      ],
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
